@@ -1,0 +1,34 @@
+name: Update daily streak image
+
+on:
+  schedule:
+    # daily at 00:10 UTC
+    - cron: '10 0 * * *'
+  workflow_dispatch: # manual run
+
+permissions:
+  contents: write
+
+jobs:
+  update-streak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Create output dir
+        run: mkdir -p output
+
+      - name: Download streak image from github-readme-streak-stats
+        # Using the public badge generator to get a PNG of your streak
+        run: |
+          curl -s "https://github-readme-streak-stats.herokuapp.com/?user=SadgyanSingh&theme=tokyonight" -o output/daily-streak.png
+          ls -lah output
+
+      - name: Commit and push generated image
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "output/daily-streak.png"
+          message: "chore: update daily streak image"
