@@ -77,14 +77,8 @@ I'm a passionate **AI/ML Engineer and MERN Stack Developer** from India, who lov
 
 ---
 
-## ☕ Support My Work  
-<a href="https://www.buymeacoffee.com/Sadgyan">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45" width="180" alt="Buy Me A Coffee" />
-</a>
+## 🔧 Step-4: How This Snake Animation Works  
+The snake animation updates automatically every day using a GitHub Actions workflow.  
+It generates two SVG files (light + dark mode) inside the `output/` folder.
 
----
-
-## ✨ Quote to Live By  
-> *“Strive for progress, not perfection — and code like your future depends on it.”*
-
----
+### 📌 The workflow file path:
